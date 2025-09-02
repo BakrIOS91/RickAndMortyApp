@@ -106,6 +106,7 @@
 				3CC4255D2E677C3500D05D25 /* Sources */,
 				3CC4255E2E677C3500D05D25 /* Frameworks */,
 				3CC4255F2E677C3500D05D25 /* Resources */,
+				3CEA13DF2E678B8300B64F04 /* Skip Files from Git */,
 			);
 			buildRules = (
 			);
@@ -231,6 +232,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "chmod +x Scripts/generate_string_constants.sh\nchmod +x Scripts/generate_image_constants.sh \n\nScripts/generate_string_constants.sh\nScripts/generate_image_constants.sh\n";
+		};
+		3CEA13DF2E678B8300B64F04 /* Skip Files from Git */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Skip Files from Git";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nset -e  # Exit if any command fails\n\n# List of files to skip\nFILES=(\n  \"RickAndMorty/Utils/Constants/StringConstants.swift\"\n  \"RickAndMorty/Utils/Constants/ImageConstants.swift\"\n)\n\n# Loop through each file and apply skip-worktree\nfor file in \"${FILES[@]}\"; do\n  if [ -f \"$file\" ]; then\n    git update-index --skip-worktree \"$file\"\n    echo \"Marked $file as skip-worktree ✅\"\n  else\n    echo \"Warning: $file does not exist ❌\"\n  fi\ndone\n\necho \"All specified files processed.\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
