@@ -5,6 +5,8 @@ import Foundation
 
 // MARK: - Strings
 public enum Str {
+    /// Hello 
+    public static let helloKey = LocalizedString(table: "Localizable", lookupKey: "hello_key")
 
 }
 
