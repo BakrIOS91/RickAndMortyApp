@@ -118,7 +118,6 @@ struct WithViewState<Content: View>: View {
     }
 }
 
-@available(iOS 17.0,*)
 #Preview {
     @Previewable @State var viewState: ViewState = .noNetwork
     
