@@ -1,7 +1,7 @@
 #!/bin/bash
 # Skip generation when running SwiftUI previews
 if [ "$ENABLE_PREVIEWS" = "YES" ]; then
-    echo "⚠️ Skipping Firebase constants generation for SwiftUI previews."
+    echo "⚠️ Skipping constants generation for SwiftUI previews."
     exit 0
 fi
 

@@ -1,17 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "hello_key" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hello"
-          }
-        }
-      }
-    },
     "character.gender.female" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -67,24 +56,13 @@
         }
       }
     },
-    "error_No_Network" : {
+    "common_Retry" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No network"
-          }
-        }
-      }
-    },
-    "error_No_Network_Message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Failed to connect to Ricky and Morty API , please check your device's network connection."
+            "value" : "Retry"
           }
         }
       }
@@ -107,6 +85,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No Data Is Available"
+          }
+        }
+      }
+    },
+    "error_No_Network" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No network"
+          }
+        }
+      }
+    },
+    "error_No_Network_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to connect to Ricky and Morty API , please check your device's network connection."
+          }
+        }
+      }
+    },
+    "error_Search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorry, we couldn't find any results"
           }
         }
       }
@@ -166,13 +177,13 @@
         }
       }
     },
-    "error_Search" : {
+    "hello_key" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sorry, we couldn't find any results"
+            "value" : "Hello"
           }
         }
       }

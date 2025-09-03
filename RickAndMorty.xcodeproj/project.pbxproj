@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0A999B2E68C7C9009FC80F /* LoaderUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3C0A999A2E68C7C9009FC80F /* LoaderUI */; };
+		3C0A99A82E68D631009FC80F /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 3C0A99A72E68D631009FC80F /* ViewInspector */; };
 		3CC068F12E6770530010A412 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC068F02E6770530010A412 /* ComposableArchitecture */; };
 		3CC068F42E67705C0010A412 /* BMSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC068F32E67705C0010A412 /* BMSwiftUI */; };
 		3CC068F72E6770660010A412 /* BMSwiftNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC068F62E6770660010A412 /* BMSwiftNetworking */; };
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C0A99A82E68D631009FC80F /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC068FA2E6770710010A412 /* Kingfisher in Frameworks */,
+				3C0A999B2E68C7C9009FC80F /* LoaderUI in Frameworks */,
 				3CC068F12E6770530010A412 /* ComposableArchitecture in Frameworks */,
 				3CC068F72E6770660010A412 /* BMSwiftNetworking in Frameworks */,
 				3CC068FD2E6770860010A412 /* BMSwiftUI in Frameworks */,
@@ -118,6 +122,7 @@
 			);
 			name = RickAndMortyTests;
 			packageProductDependencies = (
+				3C0A99A72E68D631009FC80F /* ViewInspector */,
 			);
 			productName = RickAndMortyTests;
 			productReference = 3CC425612E677C3500D05D25 /* RickAndMortyTests.xctest */;
@@ -127,7 +132,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CD3A8A72E676DC400A5D5B2 /* Build configuration list for PBXNativeTarget "RickAndMorty" */;
 			buildPhases = (
-				3CC069012E6774FF0010A412 /* Generate Resource Constants */,
+				3CC069012E6774FF0010A412 /* Generate String Constants */,
+				3C0A99A52E68D496009FC80F /* Generate Image Constants */,
 				3CD3A8982E676DC300A5D5B2 /* Sources */,
 				3CD3A8992E676DC300A5D5B2 /* Frameworks */,
 				3CD3A89A2E676DC300A5D5B2 /* Resources */,
@@ -146,6 +152,7 @@
 				3CC068F62E6770660010A412 /* BMSwiftNetworking */,
 				3CC068F92E6770710010A412 /* Kingfisher */,
 				3CC068FC2E6770860010A412 /* BMSwiftUI */,
+				3C0A999A2E68C7C9009FC80F /* LoaderUI */,
 			);
 			productName = RickAndMorty;
 			productReference = 3CD3A89C2E676DC300A5D5B2 /* RickAndMorty.app */;
@@ -184,6 +191,8 @@
 				3CC068F52E6770660010A412 /* XCRemoteSwiftPackageReference "BMSwiftNetworking" */,
 				3CC068F82E6770710010A412 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				3CC068FB2E6770860010A412 /* XCRemoteSwiftPackageReference "BMSwiftUI" */,
+				3C0A99992E68C7C9009FC80F /* XCRemoteSwiftPackageReference "LoaderUI" */,
+				3C0A99A62E68D631009FC80F /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3CD3A89D2E676DC300A5D5B2 /* Products */;
@@ -214,7 +223,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3CC069012E6774FF0010A412 /* Generate Resource Constants */ = {
+		3C0A99A52E68D496009FC80F /* Generate Image Constants */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -224,14 +233,33 @@
 			);
 			inputPaths = (
 			);
-			name = "Generate Resource Constants";
+			name = "Generate Image Constants";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "chmod +x Scripts/generate_string_constants.sh\nchmod +x Scripts/generate_image_constants.sh \n\nScripts/generate_string_constants.sh\nScripts/generate_image_constants.sh\n";
+			shellScript = "chmod +x Scripts/generate_image_constants.sh \nScripts/generate_image_constants.sh\n";
+		};
+		3CC069012E6774FF0010A412 /* Generate String Constants */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate String Constants";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "chmod +x Scripts/generate_string_constants.sh\nScripts/generate_string_constants.sh\n";
 		};
 		3CEA13DF2E678B8300B64F04 /* Skip Files from Git */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -538,6 +566,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3C0A99992E68C7C9009FC80F /* XCRemoteSwiftPackageReference "LoaderUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/LoaderUI";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.1;
+			};
+		};
+		3C0A99A62E68D631009FC80F /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.10.2;
+			};
+		};
 		3CC068EF2E6770530010A412 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -567,12 +611,22 @@
 			repositoryURL = "https://github.com/BakrIOS91/BMSwiftUI";
 			requirement = {
 				kind = exactVersion;
-				version = 0.2.0;
+				version = 0.2.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3C0A999A2E68C7C9009FC80F /* LoaderUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C0A99992E68C7C9009FC80F /* XCRemoteSwiftPackageReference "LoaderUI" */;
+			productName = LoaderUI;
+		};
+		3C0A99A72E68D631009FC80F /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C0A99A62E68D631009FC80F /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
 		3CC068F02E6770530010A412 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3CC068EF2E6770530010A412 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
