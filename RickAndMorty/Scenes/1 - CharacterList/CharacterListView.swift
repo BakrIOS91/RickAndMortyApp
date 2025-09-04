@@ -10,12 +10,100 @@
 import SwiftUI
 import ComposableArchitecture
 import BMSwiftUI
+import LoaderUI
+import Kingfisher
 
 struct CharacterListView: View {
     @Bindable var store: StoreOf<CharacterListFeature>
     
     var body: some View {
-        EmptyView()
+        NavigationStack {
+            WithViewState(
+                viewState: $store.viewState,
+                isRefreshable: true
+            ) {
+                List {
+                    ForEach(store.characterListItems, id: \.id) { chracter in
+                        cellForCharacter(chracter)
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                    }
+                    
+                    footerView
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                }
+                .background(Color.appMainBackground)
+                .listStyle(.plain)
+                .setPadding(.top, 20)
+            } retryAction: {
+                store.send(.fetchCharacterList(at: .first))
+            }
+            .task {
+                store.send(.fetchCharacterList(at: .first))
+            }
+            .searchable(text: $store.searchText)
+            .navigationTitle(Str.characters.key)
+        }
+    }
+    
+    private func cellForCharacter(
+        _ character: CharacterListItem
+    ) -> some View {
+        Button {
+            
+        } label: {
+            ZStack(alignment:.bottomLeading) {
+                KFImage(character.image.toURL)
+                    .placeholder{
+                        Image.ChrachterPlaceHolder
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .setFrame(height: 300)
+                            .setCornerRadius(10, corners: [.topLeft, .topRight])
+                    }
+                    .resizable()
+                    .loadDiskFileSynchronously()
+                    .cacheMemoryOnly()
+                    .fade(duration: 0.25)
+                    .aspectRatio(contentMode: .fill)
+                    .setFrame(height: 300)
+                    .setCornerRadius(10, corners: .allCorners)
+                
+                VStack(alignment: .leading) {
+                    Text(Str.name(p1: character.name))
+                    Text(Str.species(p1: character.species))
+                }
+                .textStyle(fontWeight: .medium, size: 13, color: .appTextColor)
+                .setPadding(10)
+                .background {
+                    Color.white.opacity(0.9)
+                        .setCornerRadius(20, corners: [.topRight, .bottomRight])
+                }
+                .setPadding(.bottom, 20)
+            }
+            .background {
+                Color.white
+                    .setCornerRadius(10)
+                    .shadow(radius: 4)
+            }
+        }
+    }
+    
+    private var footerView: some View {
+        HStack {
+            Spacer()
+            
+            BallPulseSync()
+                .frame(width: 50, height: 50, alignment: .center)
+                .foregroundColor(.appMainColor)
+                .taskDelayed(1) {
+                    store.send(.fetchCharacterList(at: .next))
+                }
+            
+            Spacer()
+        }
+        .isHidden(!store.shouldPaginate, remove: true)
     }
 }
 

@@ -25,12 +25,12 @@ struct PaginationInfo: Codable {
     // MARK: - Mock Data
     static let mockPaginationInfo = PaginationInfo(
         count: 826,
-        pages: 42
+        pages: 1
     )
 }
 
 // MARK: - Result
-struct CharacterListItem: Codable {
+struct CharacterListItem: Codable, Equatable {
     let id: Int
     let name: String
     let status: Status
@@ -57,7 +57,7 @@ struct CharacterListItem: Codable {
         created: "2021-10-25T09:18:48.188Z"
     )
 
-    static let mockCharacterListItemArray: [CharacterListItem] = [
+    static let mockCharacterListItemArray = [
         CharacterListItem(
             id: 781,
             name: "Rick's Garage",
@@ -107,6 +107,7 @@ enum CharacterGender: String, Codable {
     case female = "Female"
     case male = "Male"
     case unknown = "unknown"
+    case genderless = "Genderless"
     
     var localizedString: String {
         switch self {
@@ -116,12 +117,14 @@ enum CharacterGender: String, Codable {
             return Str.characterGenderMale.text
         case .unknown:
             return Str.characterGenderUnknown.text
+        case .genderless:
+            return Str.characterGenderGenderless.text
         }
     }
 }
 
 // MARK: - Location
-struct CharacterLocation: Codable {
+struct CharacterLocation: Codable, Equatable {
     let name: String
     let url: String
     
@@ -134,13 +137,16 @@ struct CharacterLocation: Codable {
 enum Status: String, Codable {
     case alive = "Alive"
     case dead = "Dead"
-    
+    case unknown = "unknown"
+
     var localizedString: String {
         switch self {
         case .alive:
             return Str.characterStatusAlive.text
         case .dead:
             return Str.characterStatusDead.text
+        case .unknown:
+            return Str.characterGenderUnknown.text
         }
     }
 }

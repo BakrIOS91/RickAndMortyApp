@@ -71,7 +71,9 @@ struct CharacterListModelTests {
         #expect(first.gender == .female)
         #expect(first.gender != .male)
         #expect(first.gender != .unknown)
+        #expect(first.gender != .genderless)
         #expect(first.status != .dead)
+        #expect(first.status != .unknown)
     }
     
     @Test("Decoding fails with invalid JSON")
@@ -113,14 +115,23 @@ struct CharacterListModelTests {
         let alive = Status.alive
         let dead = Status.dead
         
+        let unknown = Status.unknown
+        let genderless = CharacterGender.genderless
+        
         // When
         let aliveText = alive.localizedString
         let deadText = dead.localizedString
         
+        let unknownText = unknown.localizedString
+        let genderlessText = genderless.localizedString
+        
         // Then
         #expect(aliveText == Str.characterStatusAlive.text)
         #expect(deadText == Str.characterStatusDead.text)
+        #expect(unknownText == Str.characterStatusUnknown.text)
+        #expect(genderlessText == Str.characterGenderGenderless.text)
     }
+    
     
     // MARK: - Mock Data Validation
     
@@ -134,7 +145,7 @@ struct CharacterListModelTests {
         
         // Then
         #expect(mock.info.count == 826)
-        #expect(mock.info.pages == 42)
+        #expect(mock.info.pages == 1)
         #expect(first.id == 781)
         #expect(!first.name.isEmpty)
         #expect(!first.episode.isEmpty)

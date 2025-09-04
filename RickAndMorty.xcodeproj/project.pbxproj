@@ -239,8 +239,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "chmod +x Scripts/generate_image_constants.sh \nScripts/generate_image_constants.sh\n";
+			shellPath = /bin/bash;
+			shellScript = "# Skip generation when running SwiftUI previews\nif [ \"$ENABLE_PREVIEWS\" = \"YES\" ]; then\n    echo \"⚠️ Skipping constants generation for SwiftUI previews.\"\n    exit 0\nfi\n\nchmod +x Scripts/generate_image_constants.sh \nScripts/generate_image_constants.sh\n";
 		};
 		3CC069012E6774FF0010A412 /* Generate String Constants */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -258,8 +258,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "chmod +x Scripts/generate_string_constants.sh\nScripts/generate_string_constants.sh\n";
+			shellPath = /bin/bash;
+			shellScript = "# Skip generation when running SwiftUI previews\nif [ \"$ENABLE_PREVIEWS\" = \"YES\" ]; then\n    echo \"⚠️ Skipping constants generation for SwiftUI previews.\"\n    exit 0\nfi\n\nchmod +x Scripts/generate_string_constants.sh\nScripts/generate_string_constants.sh\n";
 		};
 		3CEA13DF2E678B8300B64F04 /* Skip Files from Git */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -478,6 +478,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JPMQ9K77T6;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -595,7 +596,7 @@
 			repositoryURL = "https://github.com/BakrIOS91/BMSwiftNetworking";
 			requirement = {
 				kind = exactVersion;
-				version = 0.1.32;
+				version = 0.1.33;
 			};
 		};
 		3CC068F82E6770710010A412 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {

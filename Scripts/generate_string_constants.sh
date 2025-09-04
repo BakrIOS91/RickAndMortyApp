@@ -1,12 +1,4 @@
 #!/bin/bash
-# Skip generation when running SwiftUI previews
-if [ "$ENABLE_PREVIEWS" = "YES" ]; then
-    echo "⚠️ Skipping constants generation for SwiftUI previews."
-    exit 0
-fi
-
-set -e
-
 echo "🚧 Generating Localized String Constants..."
 
 ROOT_DIR="${SRCROOT}/RickAndMorty"
@@ -79,7 +71,7 @@ while IFS='|' read -r key value; do
         interpolationFunctions+="
     /// $docComment
     public static func $varName($argList) -> LocalizedStringKey {
-        let format = NSLocalizedString(\"$key\", bundle: LanguageManager.shared.bundle, comment: \"\")
+        let format = NSLocalizedString(\"$key\", bundle: .main, comment: \"\")
         return String(format: format, $argValues).localizedStringKey
     }"
     else

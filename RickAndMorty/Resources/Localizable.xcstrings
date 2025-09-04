@@ -12,6 +12,17 @@
         }
       }
     },
+    "character.gender.genderless" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genderless"
+          }
+        }
+      }
+    },
     "character.gender.male" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -52,6 +63,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dead"
+          }
+        }
+      }
+    },
+    "character.status.unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        }
+      }
+    },
+    "characters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characters"
           }
         }
       }
@@ -184,6 +217,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hello"
+          }
+        }
+      }
+    },
+    "name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Name:** %@"
+          }
+        }
+      }
+    },
+    "Species" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Species:** %@"
+          }
+        }
+      }
+    },
+    "Status" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Status:** %@"
           }
         }
       }

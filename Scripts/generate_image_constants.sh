@@ -1,11 +1,4 @@
 #!/bin/bash
-# Skip generation when running SwiftUI previews
-if [ "$ENABLE_PREVIEWS" = "YES" ]; then
-    echo "⚠️ Skipping Firebase constants generation for SwiftUI previews."
-    exit 0
-fi
-set -e
-
 echo "🚧 Generating Image Constants..."
 
 ROOT_DIR="${SRCROOT}/RickAndMorty"

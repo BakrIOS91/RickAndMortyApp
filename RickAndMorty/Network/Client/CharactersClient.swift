@@ -11,7 +11,7 @@ import XCTestDynamicOverlay
 import BMSwiftNetworking
 
 struct CharactersClient {
-    var getCharacters: (_ pageIndex: Int) async -> Result<CharacterList?, APIError>
+    var getCharacters: (_ pageIndex: Int, _ searchText: String) async -> Result<CharacterList?, APIError>
 }
 
 extension DependencyValues {
@@ -23,22 +23,34 @@ extension DependencyValues {
 
 extension CharactersClient: TestDependencyKey {
     static var previewValue: CharactersClient {
-        .init { _ in
+        .init { _, _ in
             return .success(.mockCharacterList)
         }
     }
     
     static var testValue: CharactersClient {
-        .init { _ in
+        .init { _, _ in
             return .success(.mockCharacterList)
+        }
+    }
+    
+    static var failNoNetworkValue: CharactersClient {
+        .init { _, _ in
+            return .failure(.noNetwork)
+        }
+    }
+    
+    static var failDecodeValue: CharactersClient {
+        .init { _, _ in
+            return .failure(.dataConversionFailed)
         }
     }
 }
 
 extension CharactersClient: DependencyKey {
     static var liveValue: CharactersClient {
-        .init { pageIndex in
-            return await ChractersRequest.GetCharacters(pageIndex: pageIndex).performResult()
+        .init { pageIndex, searchText in
+            return await ChractersRequest.GetCharacters(pageIndex: pageIndex, searchText: searchText).performResult()
         }
     }
 }

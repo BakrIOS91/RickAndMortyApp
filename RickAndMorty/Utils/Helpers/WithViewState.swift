@@ -14,20 +14,17 @@ struct WithViewState<Content: View>: View {
     @State private var isRefreshable: Bool
     @Binding private var viewState: ViewState
     private var retryAction: () -> Void
-    private var customButtonAction: () -> Void
 
     init(
         viewState: Binding<ViewState>,
         isRefreshable: Bool = false,
         _ content: @escaping () -> Content,
         retryAction: @escaping () -> Void = {},
-        customButtonAction: @escaping () -> Void = {}
     ) {
         self._viewState = viewState
         self.isRefreshable = isRefreshable
         self.content = content
         self.retryAction = retryAction
-        self.customButtonAction = customButtonAction
     }
     
 

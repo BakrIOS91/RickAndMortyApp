@@ -38,6 +38,14 @@ struct TextStyleModifier: ViewModifier {
     }
 }
 
+struct FontHelper {
+    static func font(size: CGFloat, weight: FontWeight, color: Color) -> (font: UIFont, color: UIColor) {
+        let fontName = "Cairo-\(weight.rawValue)"
+        let scalingFactor = DeviceHelper.getScalingFactor()
+        let customFont = UIFont(name: fontName, size: size * scalingFactor) ?? UIFont.systemFont(ofSize: size)
+        return (font: customFont, color: color.uiColor)
+    }
+}
 
 public extension View {
     func textStyle(

@@ -86,6 +86,19 @@ struct AppEnumsTests {
         #expect(state == .unExpectedError)
     }
     
+    @Test("failHandler returns .searchError for notFound errors")
+    func failSearchErrorCase() {
+        // Given
+        let error = APIError.httpError(statusCode: .notFound)
+        
+        // When
+        let state = ViewState.failHandler(error)
+        
+        // Then
+        #expect(state == .searchError)
+    }
+    
+    
     @Test("failHandler returns .serverError for default HTTP errors")
     func failHandlerDefaultHTTPCase() {
         // Given

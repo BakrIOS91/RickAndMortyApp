@@ -22,15 +22,18 @@ struct ChractersRequest {
         var mockResponse:  CharacterList? { return .mockCharacterList }
         
         var pageIndex: Int
+        var searchText: String
         
         var requestTask: RequestTask {
             return .parameters([
-                "page": pageIndex
+                "page": pageIndex,
+                "name": searchText
             ])
         }
         
-        init(pageIndex: Int) {
+        init(pageIndex: Int, searchText: String) {
             self.pageIndex = pageIndex
+            self.searchText = searchText
         }
     }
     

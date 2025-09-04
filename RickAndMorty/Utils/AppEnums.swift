@@ -34,11 +34,12 @@ enum ViewState: Equatable {
             return .unExpectedError
         case .httpError(let statusCode):
             switch statusCode {
-            case .notAuthorize:
-                return .serverError
+            case .notFound:
+                return .searchError
             default:
                 return .serverError
             }
+        
         case .noNetwork:
             return .noNetwork
         default:
