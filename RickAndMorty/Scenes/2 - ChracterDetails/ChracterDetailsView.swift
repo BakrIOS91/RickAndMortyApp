@@ -35,13 +35,14 @@ struct ChracterDetailsView: View {
         .task {
             store.send(.fetchCharacter)
         }
-        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
         .ignoresSafeArea()
         
     }
     
     private func headerView(details: CharacterListItem) -> some View {
-        ZStack(alignment: .topLeading){
+        ZStack(alignment: .topLeading) {
             KFImage(details.image.toURL)
                 .placeholder{
                     Image.ChrachterPlaceHolder
@@ -57,7 +58,7 @@ struct ChracterDetailsView: View {
                 .aspectRatio(contentMode: .fill)
             
             Button {
-                store.send(.delegate(.dismiss))
+                store.send(.didPressOnBackButton)
             } label: {
                 Image(systemName: "chevron.backward")
                     .resizable()

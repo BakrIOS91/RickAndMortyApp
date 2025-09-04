@@ -44,6 +44,7 @@ struct CharacterListView: View {
                 store.send(.fetchCharacterList(at: .first))
             }
             .navigationTitle(Str.characters.key)
+            .navigationBarTitleDisplayMode(.large)
             .navigation(
                 item: $store.scope(
                     state: \.characterDetailsState,
