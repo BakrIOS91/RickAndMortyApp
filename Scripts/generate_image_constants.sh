@@ -1,15 +1,8 @@
 #!/bin/bash
-# Skip generation when running SwiftUI previews
-if [ "$ENABLE_PREVIEWS" = "YES" ]; then
-    echo "⚠️ Skipping Firebase constants generation for SwiftUI previews."
-    exit 0
-fi
-set -e
-
 echo "🚧 Generating Image Constants..."
 
 ROOT_DIR="${SRCROOT}/RickAndMorty"
-ASSETS_PATH="${ROOT_DIR}/Resources/Images.xcassets"
+ASSETS_PATH="${ROOT_DIR}/Resources/Assets.xcassets"
 OUTPUT_PATH="${ROOT_DIR}/Utils/Constants/ImageConstants.swift"
 
 # Header for the Swift file

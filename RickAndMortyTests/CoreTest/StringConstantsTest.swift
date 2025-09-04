@@ -82,4 +82,16 @@ struct StringConstantsTest {
         // Then
         assertIsText(textView)
     }
+    
+    @Test("LocalizedStringKey.textView creates Text that matches key With Paramter")
+    func localizedStringKeyWithParamter() {
+        // Given
+        let key = Str.status(p1: "Alive")
+
+        // When
+        let textView = key.textView
+        
+        // Then
+        assertIsText(textView)
+    }
 }
