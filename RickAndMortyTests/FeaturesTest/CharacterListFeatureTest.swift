@@ -158,4 +158,27 @@ struct CharacterListFeatureTests {
             $0.characterDetailsState = ChracterDetailsFeature.State(characterId: character.id)
         }
     }
+    
+    
+    @Test("Given a Character Details Dismiss Action, When Dismissed, Then Character Details State is Cleared")
+    func testCharacterDetailsDismiss() async {
+        let character = CharacterListItem.mockCharacterListItem
+        let store = await TestStore(
+            initialState: CharacterListFeature.State(
+                characterDetailsState: ChracterDetailsFeature.State(characterId: character.id)
+            )
+        ) {
+            CharacterListFeature()
+        } withDependencies: {
+            $0.charactersClient = .testValue
+        }
+        
+        // When
+        await store.send(.characterDetailsAction(.presented(.delegate(.dismiss))))
+        
+        // Then
+        await store.receive(\.characterDetailsAction.dismiss) {
+            $0.characterDetailsState = nil
+        }
+    }
 }
