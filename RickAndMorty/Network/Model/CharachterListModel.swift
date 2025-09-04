@@ -51,7 +51,7 @@ struct CharacterListItem: Codable, Equatable {
         gender: .female,
         origin: CharacterLocation(name: "Earth (Replacement Dimension)", url: "https://rickandmortyapi.com/api/location/20"),
         location: CharacterLocation(name: "Earth (Replacement Dimension)", url: "https://rickandmortyapi.com/api/location/20"),
-        image: "https://rickandmortyapi.com/api/character/avatar/781.jpeg",
+        image: "https://rickandmortyapi.com/api/character/avatar/782.jpeg",
         episode: ["https://rickandmortyapi.com/api/episode/49"],
         url: "https://rickandmortyapi.com/api/character/781",
         created: "2021-10-25T09:18:48.188Z"

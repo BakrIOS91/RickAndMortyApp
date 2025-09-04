@@ -35,15 +35,24 @@ struct CharacterListView: View {
                 }
                 .background(Color.appMainBackground)
                 .listStyle(.plain)
+                .searchable(text: $store.searchText)
                 .setPadding(.top, 20)
             } retryAction: {
                 store.send(.fetchCharacterList(at: .first))
             }
-            .task {
+            .onFirstAppear {
                 store.send(.fetchCharacterList(at: .first))
             }
-            .searchable(text: $store.searchText)
             .navigationTitle(Str.characters.key)
+            .navigationBarTitleDisplayMode(.large)
+            .navigation(
+                item: $store.scope(
+                    state: \.characterDetailsState,
+                    action: \.characterDetailsAction
+                )
+            ) {
+                ChracterDetailsView(store: $0)
+            }
         }
     }
     
@@ -51,7 +60,7 @@ struct CharacterListView: View {
         _ character: CharacterListItem
     ) -> some View {
         Button {
-            
+            store.send(.didSelectCharacter(character))
         } label: {
             ZStack(alignment:.bottomLeading) {
                 KFImage(character.image.toURL)
