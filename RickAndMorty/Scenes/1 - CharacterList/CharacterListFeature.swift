@@ -27,6 +27,8 @@ struct CharacterListFeature {
         var shouldPaginate: Bool = false
         var searchText: String = ""
         var oldSearchText: String = ""
+        
+        @Presents var characterDetailsState: ChracterDetailsFeature.State?
     }
     
     enum Action: BindableAction {
@@ -34,6 +36,7 @@ struct CharacterListFeature {
         case fetchCharacterList(at: Page)
         case characterListResponse(Result<CharacterList?, APIError>)
         case didSelectCharacter(CharacterListItem)
+        case characterDetailsAction(PresentationAction<ChracterDetailsFeature.Action>)
     }
     
     var body: some ReducerOf<Self> {
@@ -48,9 +51,14 @@ struct CharacterListFeature {
                 return handleDidSelectCharacter(state: &state, character: character)
             case .binding(\.searchText):
                 return handleSearchTextBinding(state: &state)
-            case .binding:
+            case .characterDetailsAction(.presented(.delegate(.dismiss))):
+                return .send(.characterDetailsAction(.dismiss))
+            case .binding, .characterDetailsAction:
                 return .none
             }
+        }
+        .ifLet(\.$characterDetailsState, action: \.characterDetailsAction){
+            ChracterDetailsFeature()
         }
     }
     
@@ -115,8 +123,7 @@ extension CharacterListFeature {
         state: inout FeatureState,
         character: CharacterListItem
     ) -> FeatureEffect {
-        // Handle character selection - could navigate to character details
-        // For now, just return .none as we don't have character details feature yet
+        state.characterDetailsState = .init(characterId: character.id)
         return .none
     }
     

@@ -10,6 +10,10 @@ import UIKit
 import SwiftUI
 
 struct Helpers {
+    static var screenSize: CGSize {
+        return UIScreen.main.bounds.size
+    }
+    
     static func wait(_ duration: Double = 2, perform: @escaping () -> Void ) {
         DispatchQueue.main.asyncAfter(deadline: .now() + duration, execute: perform)
     }

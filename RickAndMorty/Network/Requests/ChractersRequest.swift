@@ -37,4 +37,23 @@ struct ChractersRequest {
         }
     }
     
+    
+    struct GetCharacterDetails: ModelTargetType {
+        typealias Response = CharacterListItem?
+        
+        var baseURL: String { return AppTarget().kBaseURL }
+        
+        var requestPath: String { return "/character/\(characterId)" }
+        
+        var requestMethod: HTTPMethod { return .GET }
+        
+        var mockResponse:  CharacterListItem? { return .mockCharacterListItem }
+        
+        var characterId: Int
+        
+        init(characterId: Int) {
+            self.characterId = characterId
+        }
+    }
+    
 }

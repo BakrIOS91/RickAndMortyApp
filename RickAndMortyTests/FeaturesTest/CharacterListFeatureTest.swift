@@ -144,7 +144,7 @@ struct CharacterListFeatureTests {
 
     // MARK: - Character Selection
     
-    @Test("Given a character exists, When selecting it, Then no effect is produced")
+    @Test("Given a character exists, When selecting it, Then character details state is set")
     func testSelectCharacter() async {
         let character = CharacterListItem.mockCharacterListItem
         let store = await TestStore(initialState: CharacterListFeature.State()) {
@@ -153,7 +153,9 @@ struct CharacterListFeatureTests {
             $0.charactersClient = .testValue
         }
         
-        // When & Then (currently no effect)
-        await store.send(.didSelectCharacter(character))
+        // When
+        await store.send(.didSelectCharacter(character)) {
+            $0.characterDetailsState = ChracterDetailsFeature.State(characterId: character.id)
+        }
     }
 }
