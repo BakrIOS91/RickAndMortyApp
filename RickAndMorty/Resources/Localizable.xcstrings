@@ -1,0 +1,259 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "character.gender.female" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Female"
+          }
+        }
+      }
+    },
+    "character.gender.genderless" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genderless"
+          }
+        }
+      }
+    },
+    "character.gender.male" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Male"
+          }
+        }
+      }
+    },
+    "character.gender.unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        }
+      }
+    },
+    "character.status.alive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alive"
+          }
+        }
+      }
+    },
+    "character.status.dead" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dead"
+          }
+        }
+      }
+    },
+    "character.status.unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown"
+          }
+        }
+      }
+    },
+    "characters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characters"
+          }
+        }
+      }
+    },
+    "common_Retry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        }
+      }
+    },
+    "error_No_Data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No data found"
+          }
+        }
+      }
+    },
+    "error_No_Data_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Data Is Available"
+          }
+        }
+      }
+    },
+    "error_No_Network" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No network"
+          }
+        }
+      }
+    },
+    "error_No_Network_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to connect to Ricky and Morty API , please check your device's network connection."
+          }
+        }
+      }
+    },
+    "error_Search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorry, we couldn't find any results"
+          }
+        }
+      }
+    },
+    "error_Server" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server error"
+          }
+        }
+      }
+    },
+    "error_Server_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oops! something went wrong"
+          }
+        }
+      }
+    },
+    "error_UnExpected_Error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong!"
+          }
+        }
+      }
+    },
+    "error_UnExpected_Error_Message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unexpected error occurred. Please try again later."
+          }
+        }
+      }
+    },
+    "error_Unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown error occurred"
+          }
+        }
+      }
+    },
+    "hello_key" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello"
+          }
+        }
+      }
+    },
+    "name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Name:** %@"
+          }
+        }
+      }
+    },
+    "Species" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Species:** %@"
+          }
+        }
+      }
+    },
+    "Status" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Status:** %@"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
