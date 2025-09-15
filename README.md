@@ -84,6 +84,9 @@ The project uses Swift Package Manager for dependency management:
    - Select your target device or simulator
    - Press `Cmd + R` or click the Run button
    - The app will build and launch automatically
+  
+4. **XCode Previews** Use Legacy Previews Execution:
+In Xcode, navigate to Editor > Canvas and enable Use Legacy Previews Execution. This setting might bypass certain build processes or script executions that are causing the loop. Note that this setting may reset with Xcode updates.
 
 ### Building for Different Configurations
 
